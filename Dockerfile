@@ -16,7 +16,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
        software-properties-common
        
 RUN update-ca-certificates
-RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+RUN curl -fsSL --insecure https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+#RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 RUN apt-key fingerprint 0EBFCD88
 
 RUN add-apt-repository \
